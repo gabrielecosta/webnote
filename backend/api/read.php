@@ -7,11 +7,9 @@ require './config/db.php';
 $notes = [];
 $sql = "SELECT * FROM note";
 
-if($result = mysqli_query($con,$sql))
-{
+if($result = mysqli_query($con,$sql)) {
   $i = 0;
-  while($row = mysqli_fetch_assoc($result))
-  {
+  while($row = mysqli_fetch_assoc($result)) {
     $notes[$i]['id']    = $row['id'];
     $notes[$i]['title'] = $row['title'];
     $notes[$i]['description'] = $row['description'];
@@ -20,9 +18,7 @@ if($result = mysqli_query($con,$sql))
   }
 
   echo json_encode($notes);
-}
-else
-{
+} else {
   http_response_code(404);
 }
 
