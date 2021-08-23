@@ -1,0 +1,15 @@
+mysql -u root -p
+dentro mysql:
+create database webnote_db;
+
+create table note(
+id int not null auto_increment,
+title varchar(50),
+description text,
+status smallint,
+primary key (id));
+
+insert into note (title, description, status) values ('Progetto', 'Aggiornare repository',1);
+insert into note (title, description, status) values ('Riavvio', 'Aggiornare e riavviare computer', 2);
+insert into note (title, description, status) values ('Servizio', 'aggiungere servizio api', 3);
+ 
