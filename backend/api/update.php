@@ -9,11 +9,6 @@ if(isset($postdata) && !empty($postdata))
   // Extract the data.
   $request = json_decode($postdata);
 
-  // Validate.
-  if ((int)$request->id < 1 || trim($request->title) == '' || (int)$request->status < 0) {
-    return http_response_code(400);
-  }
-
   // Sanitize.
   $id    = mysqli_real_escape_string($con, (int)$request->id);
   $title = mysqli_real_escape_string($con, trim($request->title));
