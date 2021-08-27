@@ -1,0 +1,15 @@
+<h1>To Do</h1>
+<div *ngFor="let note of todoNotes$ | async">
+  <app-detail [note]="note"></app-detail>
+</div>
+<br>
+<h1>In progress</h1>
+<div *ngFor="let note of inProgressNotes$ | async">
+  <app-detail [note]="note"></app-detail>
+</div>
+<br>
+<h1>Done</h1>
+<div *ngFor="let note of doneNotes$ | async">
+  <app-detail [note]="note"></app-detail>
+</div>
+<br>

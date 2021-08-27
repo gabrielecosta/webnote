@@ -1,9 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
 import { Injectable } from '@angular/core';
 import { Note } from '../model/note';
+import { Status } from 'src/app/shared/model/note';
 
 @Injectable({
   providedIn: 'root'

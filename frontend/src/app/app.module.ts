@@ -10,6 +10,7 @@ import { InfoComponent } from './core/info/info.component';
 import { ListComponent } from './core/card/list/list.component';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { NgModule } from '@angular/core';
+import { KanbanComponent } from './core/kanban/kanban.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NgModule } from '@angular/core';
     DetailComponent,
     InfoComponent,
     NavbarComponent,
-    CreateComponent
+    CreateComponent,
+    KanbanComponent
   ],
   imports: [
     BrowserModule,
