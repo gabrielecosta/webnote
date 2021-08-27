@@ -1,1 +1,19 @@
-<p>info works!</p>
+<div *ngIf="note">
+  <form #f = "ngForm">
+    <label>Title</label>
+    <input type="text" name="title" [(ngModel)] = "note.title">
+    <br>
+    <label>Description</label>
+    <textarea name="description" [(ngModel)] = "note.description"></textarea>
+    <br>
+    <label>Status</label>
+    <select name="status" [(ngModel)] = 'note.status'>
+      <option *ngFor="let status of possibleStatus" value="{{ check(status) }}">{{ status }}</option>
+    </select>
+    <br>
+    <input type="button" (click)="update(f)" value="Update Note">
+  </form>
+  <input type="button" (click)="delete(note.id)" value="Delete note">
+  <a routerLink="/dashboard">Torna</a>
+
+</div>

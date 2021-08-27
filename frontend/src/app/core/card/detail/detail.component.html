@@ -1,5 +1,6 @@
 <div *ngIf="note">
   <div [style.background-color]="background(note)">
     <p>Title: {{ note.title }}</p>
+    <button routerLink="/info/{{ note.id }}">Info</button>
   </div>
 </div>

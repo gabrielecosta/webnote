@@ -1,0 +1,15 @@
+<form #f = "ngForm">
+  <label>Title</label>
+  <input type="text" name="title" [(ngModel)] = "newNote.title">
+  <br>
+  <label>Description</label>
+  <textarea name="description" [(ngModel)] = "newNote.description"></textarea>
+  <br>
+  <label>Status</label>
+  <select name="status" [(ngModel)] = 'newNote.status'>
+    <option *ngFor="let status of possibleStatus" value="{{ check(status) }}">{{ status }}</option>
+  </select>
+  <br>
+  <input type="button" (click)="create(f)" value="Create Note">
+</form>
+<a routerLink="/dashboard">Torna</a>

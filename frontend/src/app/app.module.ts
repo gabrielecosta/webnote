@@ -1,13 +1,15 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
-import { NgModule } from '@angular/core';
-import { HomeComponent } from './core/home/home.component';
-import { ListComponent } from './core/card/list/list.component';
+import { CreateComponent } from './core/create/create.component';
 import { DetailComponent } from './core/card/detail/detail.component';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './core/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './core/info/info.component';
+import { ListComponent } from './core/card/list/list.component';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
+import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { NavbarComponent } from './shared/component/navbar/navbar.component';
     ListComponent,
     DetailComponent,
     InfoComponent,
-    NavbarComponent
+    NavbarComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

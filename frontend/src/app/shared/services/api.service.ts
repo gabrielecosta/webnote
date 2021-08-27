@@ -42,12 +42,13 @@ export class ApiService {
 
 
   /** GET Note by id. Will 404 if id not found */
-  getNote(id: number): Observable<Note> {
+  getNote(id: number): Observable<Note[]> {
     const url = `${this.url}/readOne.php?id=${id}`;
-    return this.http.get<Note>(url).pipe(
-      tap(_ => console.log(`fetched Note id=${id}`)),
-      catchError(this.handleError<Note>(`getNote id=${id}`))
-    );
+    return this.http.get<Note[]>(url)
+      .pipe(
+        tap(_ => console.log('fetched notes')),
+        catchError(this.handleError<Note[]>('getNotes', []))
+        );
   }
 
   /** POST NOTE */
