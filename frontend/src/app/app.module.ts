@@ -1,16 +1,19 @@
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { CreateComponent } from './core/create/create.component';
 import { DetailComponent } from './core/card/detail/detail.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './core/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './core/info/info.component';
+import { KanbanComponent } from './core/kanban/kanban.component';
 import { ListComponent } from './core/card/list/list.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { NgModule } from '@angular/core';
-import { KanbanComponent } from './core/kanban/kanban.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { KanbanComponent } from './core/kanban/kanban.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
