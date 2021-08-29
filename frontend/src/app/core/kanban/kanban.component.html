@@ -1,15 +1,32 @@
-<h1>To Do</h1>
-<div *ngFor="let note of todoNotes$ | async">
-  <app-detail [note]="note"></app-detail>
+<div fxLayout="row" fxLayoutAlign="space-around center">
+  <div fxFlex="25">
+    <h1 class="text_title">To Do</h1>
+  </div>
+  <div fxFlex="25">
+    <h1 class="text_title">In progress</h1>
+  </div>
+  <div fxFlex="25">
+    <h1 class="text_title">Done</h1>
+  </div>
 </div>
-<br>
-<h1>In progress</h1>
-<div *ngFor="let note of inProgressNotes$ | async">
-  <app-detail [note]="note"></app-detail>
+
+<div fxLayout="row" fxLayoutAlign="space-around center">
+
+  <div fxFlex="25" fxLayoutGap="20px grid">
+      <div *ngFor="let note of todoNotes$ | async">
+        <app-detail [note]="note"></app-detail>
+      </div>
+  </div>
+
+  <div fxFlex="25" fxLayoutGap="20px grid">
+      <div *ngFor="let note of inProgressNotes$ | async">
+        <app-detail [note]="note"></app-detail>
+      </div>
+  </div>
+
+  <div fxFlex="25" fxLayoutGap="20px grid">
+      <div *ngFor="let note of doneNotes$ | async">
+        <app-detail [note]="note"></app-detail>
+      </div>
+  </div>
 </div>
-<br>
-<h1>Done</h1>
-<div *ngFor="let note of doneNotes$ | async">
-  <app-detail [note]="note"></app-detail>
-</div>
-<br>

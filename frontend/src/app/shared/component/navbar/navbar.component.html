@@ -1,5 +1,13 @@
-<div style="display: inline-flex;">
-  <a routerLink="/home">Home</a>
-  <a routerLink="/create">Create</a>
-  <a routerLink="/kanban">Kanban</a>
-</div>
+<mat-toolbar color="primary" style="width: 100%;">
+  <a routerLink="/home" class="text"><span>Webnote</span></a>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon" routerLink="/create">
+    <mat-icon>post_add</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" routerLink="/kanban">
+    <mat-icon><span class="material-icons-round">
+      dashboard
+      </span></mat-icon>
+  </button>
+</mat-toolbar>
+

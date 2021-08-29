@@ -1,6 +1,11 @@
-<div *ngIf="note">
-  <div [style.background-color]="background(note)">
-    <p>Title: {{ note.title }}</p>
-    <button routerLink="/info/{{ note.id }}">Info</button>
+<mat-card [style.background-color]="background(note)">
+  <div fxFlex="80"> <p class="text">{{ note.title }}</p> </div>
+  <span class="example-spacer"></span>
+  <div dir="rtl">
+    <button mat-icon-button routerLink="/info/{{ note.id }}">
+      <mat-icon><span class="material-icons-round">
+        more_vert
+        </span></mat-icon>
+    </button>
   </div>
-</div>
+</mat-card>

@@ -11,6 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { InfoComponent } from './core/info/info.component';
 import { KanbanComponent } from './core/kanban/kanban.component';
 import { ListComponent } from './core/card/list/list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { NgModule } from '@angular/core';
@@ -33,7 +37,18 @@ import { NgModule } from '@angular/core';
     FormsModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule
+  ],
+  exports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatDividerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
