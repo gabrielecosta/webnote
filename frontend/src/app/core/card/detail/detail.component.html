@@ -11,6 +11,9 @@
     <button mat-icon-button routerLink="/info/{{ note.id }}">
       <mat-icon><span class="material-icons-round">edit_note</span></mat-icon>
     </button>
+    <button mat-icon-button (click)="delete(note.id)">
+      <mat-icon><span class="material-icons-round">delete</span></mat-icon>
+    </button>
   </div>
 </mat-card>
 <div *ngIf="show" [style.background-color]="background(note)" class="expand_panel">

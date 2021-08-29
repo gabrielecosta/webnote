@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Note, Status } from 'src/app/shared/model/note';
 
+import { ApiService } from './../../../shared/services/api.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
@@ -12,7 +15,7 @@ export class DetailComponent implements OnInit {
 
   @Input() note!: Note;
 
-  constructor() { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -33,6 +36,13 @@ export class DetailComponent implements OnInit {
     } else {
       this.show = true;
     }
+  }
+
+  delete(id: number): void {
+    this.apiService.deleteNote(id).subscribe((note: Note) => {
+      console.log("Note deleted, ", note);
+        this.router.navigate(['/home']);
+    })
   }
 
 }

@@ -40,7 +40,7 @@ export class InfoComponent implements OnInit {
     //console.log(form.value)
     this.apiService.updateNote(form.value).subscribe((note: Note)=>{
       console.log("Note updated, ", note);
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/kanban']);
     });
   }
 
@@ -54,11 +54,6 @@ check (status: String): Status {
   }
 }
 
-delete(id: number): void {
-  this.apiService.deleteNote(id).subscribe((note: Note) => {
-    console.log("Note deleted, ", note);
-      this.router.navigate(['/dashboard']);
-  })
-}
+
 
 }

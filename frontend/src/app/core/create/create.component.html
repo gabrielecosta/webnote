@@ -1,15 +1,29 @@
-<form #f = "ngForm">
-  <label>Title</label>
-  <input type="text" name="title" [(ngModel)] = "newNote.title">
-  <br>
-  <label>Description</label>
-  <textarea name="description" [(ngModel)] = "newNote.description"></textarea>
-  <br>
-  <label>Status</label>
-  <select name="status" [(ngModel)] = 'newNote.status'>
-    <option *ngFor="let status of possibleStatus" value="{{ check(status) }}">{{ status }}</option>
-  </select>
-  <br>
-  <input type="button" (click)="create(f)" value="Create Note">
-</form>
-<a routerLink="/dashboard">Torna</a>
+<div fxLayout="row" fxLayoutAlign="center">
+  <div fxFlex="60" class="form_style">
+    <form #f = "ngForm">
+      <div class="form-group">
+        <label for="title">Title: </label>
+        <input type="text" class="form-control" name="title" [(ngModel)] = "newNote.title">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description: </label>
+        <textarea class="form-control" name="description" [(ngModel)] = "newNote.description"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="status">Status: </label>
+          <select class="form-control" name="status" [(ngModel)] = 'newNote.status'>
+            <option *ngFor="let status of possibleStatus" value="{{ check(status) }}">{{ status }}</option>
+          </select>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="15px">
+        <input type="submit" (click)="create(f)" value="Create Note" class="btn btn-primary mb-2">
+        <input type="button" routerLink="/kanban" value="Dashboard" class="btn btn-primary mb-2">
+      </div>
+
+    </form>
+
+  </div>
+</div>

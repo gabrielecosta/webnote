@@ -23,7 +23,7 @@ export class CreateComponent implements OnInit {
   create(form: { value: Note; }): void {
       this.apiService.createNote(form.value).subscribe((note: Note)=>{
         console.log("Note created, ", note);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/kanban']);
       });
   }
 
