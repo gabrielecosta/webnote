@@ -8,6 +8,8 @@ import { Note, Status } from 'src/app/shared/model/note';
 })
 export class DetailComponent implements OnInit {
 
+  show: Boolean = false;
+
   @Input() note!: Note;
 
   constructor() { }
@@ -22,6 +24,14 @@ export class DetailComponent implements OnInit {
       return 'yellow';
     } else {
       return 'red';
+    }
+  }
+
+  expand(): void {
+    if (this.show === true) {
+      this.show = false;
+    } else {
+      this.show = true;
     }
   }
 

@@ -1,11 +1,18 @@
 <mat-card [style.background-color]="background(note)">
   <div fxFlex="80"> <p class="text">{{ note.title }}</p> </div>
   <span class="example-spacer"></span>
-  <div dir="rtl">
+  <div dir="rtl" style="display: inline-flex;">
+    <button mat-icon-button (click)="expand()" *ngIf="!show">
+      <mat-icon><span class="material-icons-round">expand_more</span></mat-icon>
+    </button>
+    <button mat-icon-button (click)="expand()" *ngIf="show">
+      <mat-icon><span class="material-icons-round">expand_less</span></mat-icon>
+    </button>
     <button mat-icon-button routerLink="/info/{{ note.id }}">
-      <mat-icon><span class="material-icons-round">
-        more_vert
-        </span></mat-icon>
+      <mat-icon><span class="material-icons-round">edit_note</span></mat-icon>
     </button>
   </div>
 </mat-card>
+<div *ngIf="show" [style.background-color]="background(note)" class="expand_panel">
+  <p class="text_description">{{ note.description }}</p>
+</div>

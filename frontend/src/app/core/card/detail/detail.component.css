@@ -8,3 +8,14 @@
   font-weight: 550;
   padding: 10px;
 }
+
+.text_description {
+  font-size: medium;
+  font-weight: 200;
+  padding: 10px;
+}
+
+.expand_panel {
+  margin-top: 5px;
+  border-radius: 2px;
+}
