@@ -18,6 +18,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { NgModule } from '@angular/core';
+import { ChartComponent } from './core/chart/chart.component';
+import { ChartModule } from 'angular-highcharts';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { NgModule } from '@angular/core';
     InfoComponent,
     NavbarComponent,
     CreateComponent,
-    KanbanComponent
+    KanbanComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,8 @@ import { NgModule } from '@angular/core';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatDividerModule
+    MatDividerModule,
+    ChartModule
   ],
   exports: [
     MatToolbarModule,
